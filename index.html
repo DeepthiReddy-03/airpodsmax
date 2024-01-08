@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha256-lPE3wjN2a7ABWHbGz7+MKBJaykyzqCbU96BJWjio86U=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+    <section class="dummy-section">
+        <h1 style="color: #a5c3e4;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">AIRPODS MAX</h1>
+      </section>
+      <div class="img">
+            <img src="mb.jpg" alt="" style="float: left;">
+            <div class="text">
+                <h1 style="color: #a5c3e4;font-size: 40px;font-family: Avenir;">
+                    Introducing AirPods Max
+                     — a perfect balance of exhilarating high-fidelity audio
+                     and the effortless magic of AirPods.
+                     The ultimate personal listening experience is here.</h1>
+            </div>
+            <img src="whitedown.jpeg" style="float: right;height: 200px;width: 200px;padding-right: 50px;padding-top: 50px;">
+   
+    </div>
+      
+      
+      <section class="big-container">
+        <video autoplay muted playsinline loop src="https://apple.com/105/media/us/airpods-max/2020/996b980b-3131-44f1-af6c-fe72f9b3bfb5/anim/supercut/large_2x.mp4"></video>
+        
+        <div class="text-container">  
+          <h2>High-fidelity audio</h2>
+          <h2>Active Noise Cancellation with Transparency mode.</h2>
+          <h2>Spatial audio for theater‑like sound that surrounds you.</h2>
+          <h2>Stunning design with an exceptional fit.</h2>
+        </div>
+      </section>
+      <br><br>
+      <div class="container1">
+        <div class="img1">
+          <img src="color1.png" alt="" style="float: right;">
+          <div class="text1">
+          <br><br>
+              <h1 style="color:#a5c3e4;font-size: 60px;font-family: Avenir;padding-left: 100px;">
+                  DIFFERENT COLORS AVAILABLE</h1>
+          </div>
+  </div>
+</div>
+     
+      <script>
+        const h2s = document.querySelectorAll('h2')
+
+const observer = new IntersectionObserver((entries) => {
+	for (const entry of entries) {
+  	if (entry.isIntersecting) {
+	    entry.target.classList.add('visible')
+    } else {
+			entry.target.classList.remove('visible')
+    }
+  }
+}, { threshold: 1.0, rootMargin: '20%' })
+  
+h2s.forEach(el => observer.observe(el))
+      </script>
+      <script>
+         TweenMax.from(".text",1, {
+        opacity: 0,
+        delay: 1,
+        y: 20,
+        repeat:screenY,
+        ease: Expo.easeInOut
+    })
+           TweenMax.from(".img",3, {
+        opacity: 0,
+        delay: .8,
+        y: -1000,
+        
+        ease: Expo.easeInOut
+    })
+    TweenMax.from(".img1",3, {
+        opacity: 0,
+        delay: 1,
+        y: -1000,
+        
+        ease: Expo.ease
+    })
+      </script>
+</body>
+</html>
